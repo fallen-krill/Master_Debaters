@@ -13,7 +13,12 @@ users = {}
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    image = "static/logo.png"
+    return render_template('index.html', imageurl = image)
+
+@app.route('/queue')
+def queue():
+    image = "static/debate.png"
 
 # Handle new user joining
 @socketio.on('join')

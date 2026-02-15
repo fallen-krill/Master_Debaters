@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> God help us </title>
+    <meta charset="UTF-8">
+    <title>Master Debaters</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   </head>
   <body>
-    <h1> Master Debaters </h1>
-    <p>
-      I need a chat window...
-    </p>
+    <a>
+    <img src="/static/logo.png" width="400" height="300" alt="logo">
+    </a>
+    <div class="container">
+      <h1>Master Debater</h1>
+      <p class="subtitle">
+          Step into the courtroom of ideas. Debate with clarity and respect.
+      </p>
+
+      <div class="buttons">
+          <a href="/queue" class="btn primary">Join a Debate</a>
+          <a href="/spectate" class="btn secondary">Spectate Live</a>
+      </div>
+
+      <div class="rules-box">
+          <h3>Rules & How It Works</h3>
+          <ul>
+              <li>Take a stance</li>
+              <li>Debate in 3 structured rounds</li>
+              <li>Listen and reflect on the other side</li>
+              <li>Earn points for logic, clarity, and civility</li>
+          </ul>
+      </div>
+    </div>
     <br><br><br>
     <button type="button" onclick="alert('Button clicked!')">Click Me!</button>
     <input type="text" id="test_text" name="test_text"><br><br>

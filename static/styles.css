@@ -1,0 +1,110 @@
+/* Global */
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background: linear-gradient(135deg, #6a5acd, #b19cd9); /* Lavender gradient */
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Heading */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #7ec8e3; /* light blue highlight */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #dbe9f4;
+}
+
+/* Buttons */
+.buttons {
+    margin-bottom: 50px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.primary {
+    background: #9b59b6; /* lavender button */
+    color: #7ec8e3; /* light blue text */
+    border: 2px solid #7ec8e3;
+}
+
+.primary:hover {
+    background: #8e44ad;
+    transform: translateY(-3px) scale(1.05);
+}
+
+.secondary {
+    background: #7d3c98; /* darker lavender */
+    color: #7ec8e3;
+    border: 2px solid #7ec8e3;
+}
+
+.secondary:hover {
+    background: #6c3483;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Rules Box */
+.rules-box {
+    background: rgba(0,0,0,0.2);
+    border-left: 5px solid #7ec8e3; /* light blue border */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.rules-box h3 {
+    color: #7ec8e3; /* light blue heading */
+    margin-bottom: 15px;
+}
+
+.rules-box ul {
+    list-style-type: none;
+    padding: 0;
+    color: #dbe9f4;
+}
+
+.rules-box ul li {
+    padding: 8px 0;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
