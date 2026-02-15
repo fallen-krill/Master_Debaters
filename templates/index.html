@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> God help us </title>
+  </head>
+  <body>
+    <h1> Master Debaters </h1>
+    <p>
+      I need a chat window...
+    </p>
+    <br><br><br>
+    <button type="button" onclick="alert('Button clicked!')">Click Me!</button>
+    <input type="text" id="test_text" name="test_text"><br><br>
+
+    <!-- Code from https://www.geeksforgeeks.org/python/flask-web-sockets/ -------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script> <!-- Use pre-exististing socket JS library -->
+    <script>
+      var socket = io();
+      var username = prompt("Enter your name:")
+      socket.emit("join", username);
+
+      //listen
+      socket.on("message", function(data){
+	  var messages = document.getElementById("messages");
+	  messages.innerHTML += `<p>${data}</p>`;
+      });
+
+      // send messages
+      function sendMessage() {
+	  var msgInput = document.getElementById("msg");
+	  var message = msgInput.value;
+	  socket.send(message);
+	  msgInput.value = ""
+      }
+      </script>
+
+    <h2>Flask WebSocket Chat</h2>
+    <input id="msg" type="text" placeholder="Enter your message">
+    <button onclick="sendMessage()">Send</button>
+    <div id="messages"></div>
+
+    <!------------------------------------------------------------------------------>
+  </body>
+</html>
+
