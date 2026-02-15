@@ -1,0 +1,28 @@
+    <!-- Code from https://www.geeksforgeeks.org/python/flask-web-sockets/ -------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script> <!-- Use pre-exististing socket JS library -->
+    <script>
+      var socket = io();
+      var username = prompt("Enter your name:")
+      socket.emit("join", username);
+
+      //listen
+      socket.on("message", function(data){
+	  var messages = document.getElementById("messages");
+	  messages.innerHTML += `<p>${data}</p>`;
+      });
+
+      // send messages
+      function sendMessage() {
+	  var msgInput = document.getElementById("msg");
+	  var message = msgInput.value;
+	  socket.send(message);
+	  msgInput.value = ""
+      }
+      </script>
+
+    <h2>Flask WebSocket Chat</h2>
+    <input id="msg" type="text" placeholder="Enter your message">
+    <button onclick="sendMessage()">Send</button>
+    <div id="messages"></div>
+
+    <!------------------------------------------------------------------------------>

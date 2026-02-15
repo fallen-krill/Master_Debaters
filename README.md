@@ -3,7 +3,8 @@
 ```
 python3 -m venv ./venv
 source venv/bin/activate
-pip install Flask
+pip install flask flask-socketio
+flask --app flask_test run
 ```
 
 When done, type `deactivate`

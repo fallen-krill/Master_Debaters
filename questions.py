@@ -22,7 +22,3 @@ def getPrompt():
     data = f.readlines()
     f.close()
     return (data[random.randint(0, len(data)-1)])
-
-getPrompt()
-username = "".join(random.choices(string.ascii_lowercase, k=10))
-print(username)

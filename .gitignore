@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 __pycache__
 __pycache__/**
 **/__pycache__
 venv
 **/venv
 venv/**
+=======
+__pycache__/**
+venv/**
+**/__pycache__
+>>>>>>> flask_testing_stuff
