@@ -3,12 +3,14 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 import os
+import random
 
 class Room():
     def __init__(self, room_id):
         self.debaters = [room_id]
         self.spectators = []
         self.room_id = room_id # first person's id determines room ID
+        self.prompt = "[prompt]"
 
 
 # taken from task4-exploit.py from CPSC 525 F25 with Dr. Federl -----------------
@@ -29,7 +31,7 @@ usernames = {} # store username by user id
 @app.route('/queue')
 def queue():
     image = "static/debate.png"
-    return render_template('debate.html', imageurl = image)
+    return render_template('debate.html', imageurl = image, prompttext="abcd")
     
 @app.route('/')
 def index():

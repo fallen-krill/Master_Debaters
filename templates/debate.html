@@ -3,9 +3,11 @@
   <head>
     <title>Debate</title>
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+
   </head>
+
+
   <body>
-    <br>
     <img src="/static/debate.png">
     <br>
     <!-- Code from https://www.geeksforgeeks.org/python/flask-web-sockets/ -------->
@@ -31,7 +33,12 @@
       </script>
 
     <br><br>
-    <h2>Flask WebSocket Chat</h2>
+    <h2 id="prompt1">Prompt: {{ prompttext}}</h2>
+    <!-- <script> -->
+    <!--   const pr1 = document.getElementById('prompt1'); -->
+
+    <!--   pr1.innerHTML = "test"; -->
+    <!-- </script> -->
     <input id="msg" type="text" placeholder="Enter your message">
     <button onclick="sendMessage()">Send</button>
     <div id="messages"></div>
