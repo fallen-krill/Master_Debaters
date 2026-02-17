@@ -102,12 +102,10 @@ def handle_disconnect(data):
     room_id = user_room.get(username, None)
 
     if room_id is not None:      
-        send(f"{username} left the chat", to=room_id)
-        rooms[room_id].debaters.remove(username)
-        
-        if len(rooms[room_id].debaters) == 0:
-            close_room(room_id)
-            del rooms[room_id]
+        send(f"{username} left the chat. Please refresh the page.", to=room_id)
+
+        close_room(room_id)
+        del rooms[room_id]
     
 
 if __name__ == '__main__':
