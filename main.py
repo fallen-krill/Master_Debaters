@@ -22,6 +22,9 @@ rooms = {} # store room objects by room id
 user_room = {} # store the room id the user is currently in, by username
 usernames = {} # store username by user id
 
+# do this on server start
+fd = open("debate_list.txt", "r")
+prompts = fd.readlines()
 
 class Room():
     def __init__(self, room_id):
@@ -109,8 +112,4 @@ def handle_disconnect(data):
 
 if __name__ == '__main__':
 
-    # do this on server start
-    fd = open("debate_list.txt", "r")
-    prompts = fd.readlines()
-    
     socketio.run(app, debug=True)
