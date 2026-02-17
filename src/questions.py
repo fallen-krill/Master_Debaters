@@ -1,10 +1,10 @@
-from pathlib import Path
+import json
 import random
+from pathlib import Path
 from typing import Iterator
 
 import requests
 from bs4 import BeautifulSoup
-import json
 
 TOPICS_URL = "https://blog.kialo-edu.com/debate-ideas/philosophical-debate-topics/"
 TOPICS_FILENAME = "debate_list.json"
