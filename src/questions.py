@@ -31,4 +31,6 @@ def get_prompt() -> str:
         data = topics
     return random.choice(data)
 
-get_prompt()
+
+if __name__ == "__main__":
+    get_prompt()
