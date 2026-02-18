@@ -29,6 +29,9 @@ rooms = {}  # store room objects by room id
 user_room = {}  # store the room id the user is currently in, by username
 usernames = {}  # store username by user id
 
+# (main doesn't run if you start server with flask run)
+with open(TOPICS_FILENAME, "r") as f:
+    prompts = json.load(f)
 
 @dataclass
 class Room:
@@ -108,6 +111,4 @@ def handle_disconnect(data):
 
 
 if __name__ == "__main__":
-    with open(TOPICS_FILENAME, "r") as f:
-        prompts = json.load(f)
     socketio.run(app, debug=True)

@@ -21,7 +21,7 @@ def get_topics() -> Iterator[str]:
 
 # Function gives you a question from a list of topics by a blog
 def get_prompt() -> str:
-    path = Path(TOPICS_FILENAME)
+    path = Path("../"+TOPICS_FILENAME)
     if path.exists():
         data = json.loads(path.read_text())
     else:
@@ -30,3 +30,5 @@ def get_prompt() -> str:
             json.dump(topics, f)
         data = topics
     return random.choice(data)
+
+get_prompt()

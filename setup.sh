@@ -1,5 +1,6 @@
 #!/bin/bash
 python3 -m venv ./venv
 source venv/bin/activate
-pip install flask-socketio
+pip install -r requirements.txt
+python3 src/questions.py
 deactivate
