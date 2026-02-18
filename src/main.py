@@ -3,11 +3,11 @@
 import json
 import os
 import random
-
 from dataclasses import dataclass, field
 
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, close_room, emit, join_room, send
+
 from questions import TOPICS_FILENAME
 
 DEFAULT_PROMPT = "[prompt]"
@@ -33,13 +33,17 @@ usernames = {}  # store username by user id
 with open(TOPICS_FILENAME, "r") as f:
     prompts = json.load(f)
 
+
 @dataclass
 class Room:
     room_id: str = field()
-    debaters: list = field(default_factory=list)
-    spectators: list = field(default_factory=list)
+    debaters: list = field(init=False)
+    spectators: list = field(init=False, default_factory=list)
     prompt: str = field(init=False, default=DEFAULT_PROMPT)
     chat_log: list[str] = field(init=False, default_factory=list)
+
+    def __post_init__(self) -> None:
+        self.debaters = [self.room_id]
 
     def new_prompt(self) -> None:
         self.prompt = random.choice(prompts)
